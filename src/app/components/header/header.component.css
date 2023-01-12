@@ -1,0 +1,17 @@
+mat-toolbar {
+  background-color: rgb(16, 0, 81);
+  color: whitesmoke;
+}
+
+.example-container {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #555;
+  height: calc(100vh - 65px);
+  width: 280px;
+  border-right: none;
+  text-align: center;
+  flex: 1 1 auto;
+
+
+}

@@ -1,0 +1,16 @@
+
+
+img{
+  width: 100%;
+  height: 200px;
+}
+
+
+.card-parent{
+ background-color: #484266;
+ color:rgb(104, 137, 166)
+}
+.card-parent ul li{
+ background-color: #56516d;
+ color:rgb(104, 137, 166)
+}
