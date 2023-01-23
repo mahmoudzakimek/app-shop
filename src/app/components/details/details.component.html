@@ -1,17 +1,22 @@
-<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="box">
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <img src="{{data?.image}}" alt="sas">
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <ul class="list-unstyled">
+          <li><strong>title : </strong> {{data?.title}}</li>
+          <li><strong>categories : </strong> {{data?.category}}</li>
+          <li><strong>description : </strong> {{data?.description}}</li>
+          <li><strong>rate : </strong> {{data?.rating?.rate}}</li>
+          <li><strong>count : </strong> {{data?.rating?.count}}</li>
+          <li><strong>price : </strong> {{data?.price}} LE</li>
+        </ul>
       </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      <div class="container d-flex" ></div>
+      <button type="button" class="btn btn-info" (click)=" addToCart(data)" >Add to Card</button>
+      <button type="button" routerLink="/products" class="btn btn-info" >Shop More</button>
     </div>
   </div>
 </div>

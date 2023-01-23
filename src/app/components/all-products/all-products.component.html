@@ -1,22 +1,23 @@
 
-<div class="row ms-4 ">
-<div class="card card-parent  ms-2 mb-2" style="width: 18rem;"   *ngFor="let product of allProducts">
-  <img src="{{product.image}}" class="card-img-top" alt="Chicago Skyscrapers"/>
-  <hr>
-  <div class="card-body">
-    <h5 class="card-title">{{product.title | slice:0:11 }}</h5>
-    <p class="card-text">{{product.description  | slice:0:80}}...<a  routerLink="/details" >readmore</a></p>
-  </div>
-  <ul class="list-group list-group-light list-group-small">
-    <li class="list-group-item px-4">Category : {{product.category}}</li>
-    <li class="list-group-item px-4">price : {{product.price }} LE</li>
-  </ul>
-  <div class="card-body d-flex justify-content-around">
-    <button type="button" class="btn btn-primary">Add to Cart</button>
 
-    <button type="button" class="btn btn-info">Info</button>
-
+<div class="container-fluid d-flex justify-content-between" *ngIf="allProducts.length>0">
+  <div class="row  ">
+    <div class="card card-parent  ms-2 mb-2" style="width: 17rem;" *ngFor="let product of allProducts">
+      <img src="{{product?.image}}" class="card-img-top" alt="Chicago Skyscrapers" />
+      <hr>
+      <div class="card-body">
+        <h5 class="card-title">{{product?.title | slice:0:11 }}</h5>
+        <p class="card-text">{{product?.description | slice:0:80}}...<a
+            routerLink="/details/{{product?.id}}">readmore</a></p>
+      </div>
+      <ul class="list-group list-group-light list-group-small">
+        <li class="list-group-item px-4">Category : {{product?.category}}</li>
+        <li class="list-group-item px-4">price : {{product?.price }} LE</li>
+      </ul>
+      <div class="card-body d-flex justify-content-around">
+        <button type="button" class="btn btn-primary" (click)=" addToCart(product)">Add to Cart</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/details', product.id,'edit']">Edit Product</button>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-<app-details></app-details>

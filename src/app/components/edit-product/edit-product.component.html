@@ -1,0 +1,83 @@
+
+
+
+
+<div class="container">
+  <form action="" [formGroup]="editedProduct" >
+  <div class="brand-title">Add The Product</div>
+  <div class="inputs">
+    <div class="title">
+
+    <label>product Name (title) :</label>
+    <input type="text" formControlName="title"  placeholder="Product Name"
+    [ngClass]="{'is-invalid': (editedProduct.get('title')?.touched ||
+    editedProduct.get('title')?.dirty) && !editedProduct.get('title')?.valid }"
+    />
+    <!-- [ngClass]="{'is-invalid': (editedProduct.get('title')?.touched ||
+    editedProduct.get('title')?.dirty) && !editedProduct.get('title')?.valid }" -->
+    <span class="invalid-feedback ">
+      <span *ngIf="editedProduct?.get('title')?.errors?.['required'] " >
+          Please enter your first name.
+      </span>
+      <span *ngIf="editedProduct?.get('title')?.errors?.['minlength']">
+          The first name must be longer than 3 characters.
+      </span>
+    </span>
+
+  </div>
+
+<div class="category">
+    <label>Product Category :</label>
+    <input type="text" formControlName="category" placeholder="Category"
+     [ngClass]="{'is-invalid': (editedProduct.get('category')?.touched ||
+    editedProduct.get('category')?.dirty) && !editedProduct.get('category')?.valid }"/>
+    <span class="invalid-feedback ">
+       <span *ngIf="editedProduct?.get('category')?.errors?.['required'] " >
+          Please enter thie category
+      </span>
+      <span *ngIf="editedProduct?.get('category')?.errors?.['minlength']">
+          The first name must be longer than 3 characters.
+      </span>
+    </span>
+
+  </div>
+
+  <div class="price">
+
+    <label>Product Price</label>
+    <input type="number" formControlName="price" placeholder="price"
+    [ngClass]="{'is-invalid': (editedProduct.get('price')?.touched ||
+    editedProduct.get('price')?.dirty) && !editedProduct.get('price')?.valid }"/>
+    <span class="invalid-feedback ">
+      <span *ngIf="editedProduct?.get('price')?.errors?.['required'] " >
+          Please enter your first name.
+      </span>
+      <span *ngIf="editedProduct?.get('price')?.errors?.['minlength']">
+          The first name must be longer than 3 characters.
+      </span>
+    </span>
+
+
+  </div>
+
+<div class="description">
+    <label>Product Description</label>
+    <textarea  name="description" formControlName="description"  placeholder="Description" rows="4" cols="90"
+    [ngClass]="{'is-invalid': (editedProduct.get('description')?.touched ||
+    editedProduct.get('description')?.dirty) && !editedProduct.get('description')?.valid }">
+      </textarea>
+      <span class="invalid-feedback ">
+        <span *ngIf="editedProduct?.get('description')?.errors?.['required'] " >
+            Please enterthe description
+        </span>
+        <span *ngIf="editedProduct?.get('description')?.errors?.['minlength']">
+            The first name must be longer than 3 characters.
+        </span>
+      </span>
+
+    </div>
+    <button type="submit" (click)=" onEdit()"  >edit</button>
+  </div>
+</form>
+</div>
+
